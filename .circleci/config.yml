@@ -25,6 +25,7 @@ jobs:
           version: "3.7.3"
       # - run: sdkmanager "build-tools;24.0.3"
       - run: flutter build apk
+      - run: cd android && ./gradlew build
       - android/start-emulator-and-run-tests:
           pre-run-tests-steps:
             - run: echo "beginning tests"
