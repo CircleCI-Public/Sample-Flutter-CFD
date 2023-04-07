@@ -4,7 +4,7 @@ orbs:
   android: circleci/android@2.2.0
 
 jobs:
-  flutter-test:
+  flutter-test-android:
     machine:
       image: android:2023.04.1
     steps:
@@ -16,7 +16,7 @@ jobs:
       - store_artifacts:
           path: report.json
   
-  flutter-build:
+  flutter-build-android:
     docker:
       - image: cimg/android:2023.04
     steps:
@@ -44,10 +44,23 @@ jobs:
       - store_artifacts:
           path: testdata
 
+  flutter-build-ios:
+    macos:
+      xcode: 14.2.0
+    steps:
+      - checkout
+      - flutter/install_sdk_and_pub:
+          version: "3.7.3"
+      - run: flutter build ipa
+      - run: flutter test
+
 workflows:
-  test-and-build-flutter:
+  test-and-build-flutter-android:
     jobs:
-      - flutter-test
-      - flutter-build:
+      - flutter-test-android
+      - flutter-build-android:
           requires:
             - flutter-test
+  test-and-build-flutter-ios
+    jobs:
+      - flutter-build-ios
