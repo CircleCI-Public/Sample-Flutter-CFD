@@ -53,14 +53,14 @@ jobs:
           version: "3.7.3"
       - run: flutter build ipa
       - run: flutter test
+      - run: flutter devices
 
 workflows:
-  test-and-build-flutter-android:
+  test-and-build-flutter:
     jobs:
       - flutter-test-android
       - flutter-build-android:
           requires:
             - flutter-test-android
-  test-and-build-flutter-ios:
-    jobs:
       - flutter-build-ios
+     
