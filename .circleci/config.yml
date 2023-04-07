@@ -61,6 +61,6 @@ workflows:
       - flutter-build-android:
           requires:
             - flutter-test
-  test-and-build-flutter-ios
+  test-and-build-flutter-ios:
     jobs:
       - flutter-build-ios
