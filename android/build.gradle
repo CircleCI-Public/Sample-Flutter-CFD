@@ -29,3 +29,7 @@ subprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+android {
+    buildToolsVersion "24.0.3"
+}
