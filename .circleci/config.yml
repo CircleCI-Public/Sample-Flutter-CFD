@@ -6,7 +6,7 @@ orbs:
 jobs:
   flutter-test:
     machine:
-      image: android:2023.04.1
+      image: android:2023.05.1
     steps:
       - checkout
       - flutter/install_sdk:
@@ -18,7 +18,7 @@ jobs:
   
   flutter-build:
     machine:
-      image: android:2023.04.1
+      image: android:2023.05.1
     steps:
       - checkout
       - flutter/install_sdk_and_pub:
