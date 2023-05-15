@@ -85,7 +85,7 @@ jobs:
     steps:
         - checkout
         - macos/switch-ruby:
-              version: "3.0"
+              version: "3.0.5"
         - run: cd ios && bundle install
         - run: cd ios && bundle exec fastlane dev
 
