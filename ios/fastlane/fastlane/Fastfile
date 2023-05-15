@@ -1,0 +1,20 @@
+# fastlane/Fastfile
+default_platform :ios
+
+platform :ios do
+  before_all do
+    setup_circle_ci
+  end
+
+  desc "Runs all the tests"
+  lane :test do
+    scan
+  end
+
+  desc "Development build"
+  lane :dev do
+    #scan
+    match(type: "development")
+    gym(export_method: "development")
+  end
+end

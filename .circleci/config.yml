@@ -2,6 +2,7 @@ version: 2.1
 orbs:
   flutter: circleci/flutter@2.0.2
   android: circleci/android@2.2.0
+  macos: circleci/macos@2
 
 jobs:
   flutter-test:
@@ -77,7 +78,16 @@ jobs:
       - run: flutter upgrade
       - run: flutter create .
       - run: cd android && fastlane deploy
-
+  deploy-ios:
+    macos:
+      xcode: 14.2.0
+      resource_class: macos.x86.medium.gen2
+    steps:
+        - checkout
+        - macos/switch-ruby:
+              version: "3.0"
+        - run: cd ios && bundle install
+        - run: cd ios && bundle exec fastlane dev
 
 workflows:
   test-and-build-flutter:
@@ -92,3 +102,4 @@ workflows:
           filters:
             branches:
               only: main
+      - deploy-ios
