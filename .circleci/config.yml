@@ -4,6 +4,12 @@ orbs:
   android: circleci/android@2.2.0
 
 jobs:
+  gradle-managed-test:
+    machine:
+      image: android:2023.05.1
+    steps:
+      - checkout
+      - run: cd android && ./gradlew pixel2api30 debug androidTest
   flutter-test:
     machine:
       image: android:2023.04.1
