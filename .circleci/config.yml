@@ -9,6 +9,18 @@ jobs:
       image: android:2023.05.1
     steps:
       - checkout
+      - flutter/install_sdk_and_pub:
+          version: "3.7.3"
+      - run:
+          name: Decode Android key store
+          command: cd android/app && echo $BASE64_KEYSTORE | base64 -d | tee keystore keystore > /dev/null
+      - run:
+          name: Create keystore.properties
+          command: cd android && printf 'releaseKeyAlias=%s\nreleaseKeyPassword=%s\nreleaseKeyStore=./keystore\nreleaseStorePassword=%s' \
+            $RELEASE_KEY_ALIAS $RELEASE_KEY_PASSWORD $RELEASE_STORE_PASSWORD > keystore.properties
+      - run:
+          name: Create Google Play key
+          command: cd android/app && echo $GOOGLE_PLAY_KEY > ./google-play-key.json
       - run: cd android && ./gradlew pixel2api30 debug androidTest
   flutter-test:
     machine:
