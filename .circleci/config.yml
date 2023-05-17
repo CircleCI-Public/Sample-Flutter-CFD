@@ -21,7 +21,7 @@ jobs:
       - run:
           name: Create Google Play key
           command: cd android/app && echo $GOOGLE_PLAY_KEY > ./google-play-key.json
-      - run: cd android && ./gradlew pixel2api30 debug androidTest
+      - run: cd android && ./gradlew pixel2api30DebugAndroidTest
   flutter-test:
     machine:
       image: android:2023.04.1
