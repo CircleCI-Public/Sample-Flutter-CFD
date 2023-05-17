@@ -89,6 +89,7 @@ workflows:
   test-and-build-flutter:
     jobs:
       - flutter-test
+      - gradle-managed-test
       - flutter-build:
           requires:
             - flutter-test
