@@ -22,7 +22,7 @@ jobs:
           name: Create Google Play key
           command: cd android/app && echo $GOOGLE_PLAY_KEY > ./google-play-key.json
       - run: echo "export ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL=600" >> ~/.bashrc
-      - run: cd android && ./gradlew pixel2api30DebugAndroidTest --info
+      - run: cd android && ./gradlew pixel2api27 Debug AndroidTest --info
   flutter-test:
     machine:
       image: android:2023.04.1
