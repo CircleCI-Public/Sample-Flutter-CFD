@@ -23,7 +23,7 @@ jobs:
           command: cd android/app && echo $GOOGLE_PLAY_KEY > ./google-play-key.json
       - run: echo "export ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL=600" >> ~/.bashrc
       - run: cd android && ./gradlew pixel2api27DebugAndroidTest
-      - run: cd android && ./gradlew pixel2api34DebugAndroidTest
+      - run: cd android && ./gradlew pixel2api33DebugAndroidTest
       - run: cd android && ./gradlew allAPIGroupDebugAndroidTest
   flutter-test:
     machine:

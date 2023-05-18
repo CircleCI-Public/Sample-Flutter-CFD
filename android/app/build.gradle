@@ -144,11 +144,6 @@ android {
                 apiLevel = 33
                 systemImageSource = "google"
                 }
-                pixel2api34 (com.android.build.api.dsl.ManagedVirtualDevice) {
-                device = "Pixel 2"
-                apiLevel = 34
-                systemImageSource = "google"
-                }
             }
             groups {
                 allAPI {
@@ -159,7 +154,6 @@ android {
                     targetDevices.add(devices.pixel2api31)
                     targetDevices.add(devices.pixel2api32)
                     targetDevices.add(devices.pixel2api33)
-                    targetDevices.add(devices.pixel2api34)
                 }
             }
         } 
