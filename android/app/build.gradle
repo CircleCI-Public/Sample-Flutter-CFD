@@ -146,10 +146,12 @@ android {
                 }
             }
             groups {
-                allAPI {
+                lowAPI {
                     targetDevices.add(devices.pixel2api27)
                     targetDevices.add(devices.pixel2api28)
                     targetDevices.add(devices.pixel2api29)
+                }
+                highAPI {
                     targetDevices.add(devices.pixel2api30)
                     targetDevices.add(devices.pixel2api31)
                     targetDevices.add(devices.pixel2api32)
