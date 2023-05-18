@@ -157,6 +157,15 @@ android {
                     targetDevices.add(devices.pixel2api32)
                     targetDevices.add(devices.pixel2api33)
                 }
+                allAPI {
+                    targetDevices.add(devices.pixel2api27)
+                    targetDevices.add(devices.pixel2api28)
+                    targetDevices.add(devices.pixel2api29)
+                    targetDevices.add(devices.pixel2api30)
+                    targetDevices.add(devices.pixel2api31)
+                    targetDevices.add(devices.pixel2api32)
+                    targetDevices.add(devices.pixel2api33)
+                }
             }
         } 
     }
