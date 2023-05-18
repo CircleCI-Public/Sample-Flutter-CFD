@@ -44,7 +44,7 @@ jobs:
       # - run: 
       #     command: |
       #       cd android && ./gradlew pixel2api33DebugAndroidTest
-      - run: cd android && ./gradlew allAPIGroupDebugAndroidTest
+      - run: cd android && ./gradlew allAPIGroupDebugAndroidTest --info
   flutter-test:
     machine:
       image: android:2023.04.1
