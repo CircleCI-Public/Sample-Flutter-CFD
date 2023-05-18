@@ -114,8 +114,55 @@ android {
                 // To include Google services, use "google".
                 systemImageSource = "google"
                 }
+                pixel2api28 (com.android.build.api.dsl.ManagedVirtualDevice) {
+                device = "Pixel 2"
+                apiLevel = 28
+                systemImageSource = "google"
+                }
+                pixel2api29 (com.android.build.api.dsl.ManagedVirtualDevice) {
+                device = "Pixel 2"
+                apiLevel = 29
+                systemImageSource = "google"
+                }
+                pixel2api30 (com.android.build.api.dsl.ManagedVirtualDevice) {
+                device = "Pixel 2"
+                apiLevel = 30
+                systemImageSource = "google"
+                }
+                pixel2api31 (com.android.build.api.dsl.ManagedVirtualDevice) {
+                device = "Pixel 2"
+                apiLevel = 31
+                systemImageSource = "google"
+                }
+                pixel2api32 (com.android.build.api.dsl.ManagedVirtualDevice) {
+                device = "Pixel 2"
+                apiLevel = 32
+                systemImageSource = "google"
+                }
+                pixel2api33 (com.android.build.api.dsl.ManagedVirtualDevice) {
+                device = "Pixel 2"
+                apiLevel = 33
+                systemImageSource = "google"
+                }
+                pixel2api34 (com.android.build.api.dsl.ManagedVirtualDevice) {
+                device = "Pixel 2"
+                apiLevel = 34
+                systemImageSource = "google"
+                }
             }
-        }
+            groups {
+                allAPI {
+                    targetDevices.add(devices.pixel2api27)
+                    targetDevices.add(devices.pixel2api28)
+                    targetDevices.add(devices.pixel2api29)
+                    targetDevices.add(devices.pixel2api30)
+                    targetDevices.add(devices.pixel2api31)
+                    targetDevices.add(devices.pixel2api32)
+                    targetDevices.add(devices.pixel2api33)
+                    targetDevices.add(devices.pixel2api34)
+                }
+            }
+        } 
     }
 }
 
