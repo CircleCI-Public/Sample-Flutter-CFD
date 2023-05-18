@@ -47,7 +47,7 @@ jobs:
       - run: cd android && ./gradlew cleanManagedDevices --unused-only
       - run: cd android && ./gradlew lowAPIGroupDebugAndroidTest --info
       - run: sdkmanager "system-images;android-32;google_apis;x86_64"
-      - run: sdkmanager "system-images;android-31;google_apis;x86"
+      - run: sdkmanager "system-images;android-31;google_apis;x86_64"
       - run: cd android && ./gradlew highAPIGroupDebugAndroidTest --info
   flutter-test:
     machine:
