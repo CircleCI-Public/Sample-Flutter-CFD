@@ -26,31 +26,24 @@ jobs:
       - run: 
           command: |
             cd android && ./gradlew pixel2api27DebugAndroidTest
-          background: true
       - run: 
           command: |
             cd android && ./gradlew pixel2api28DebugAndroidTest
-          background: true
       - run: 
           command: |
             cd android && ./gradlew pixel2api29DebugAndroidTest
-          background: true
       - run: 
           command: |
             cd android && ./gradlew pixel2api30DebugAndroidTest
-          background: true
       - run: 
           command: |
             cd android && ./gradlew pixel2api31DebugAndroidTest
-          background: true
       - run: 
           command: |
             cd android && ./gradlew pixel2api32DebugAndroidTest
-          background: true
       - run: 
           command: |
             cd android && ./gradlew pixel2api33DebugAndroidTest
-          background: false
       - run: cd android && ./gradlew allAPIGroupDebugAndroidTest
   flutter-test:
     machine:
