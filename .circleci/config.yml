@@ -22,8 +22,34 @@ jobs:
           name: Create Google Play key
           command: cd android/app && echo $GOOGLE_PLAY_KEY > ./google-play-key.json
       - run: echo "export ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL=600" >> ~/.bashrc
-      - run: cd android && ./gradlew pixel2api27DebugAndroidTest
-      - run: cd android && ./gradlew pixel2api33DebugAndroidTest
+      - run: 
+          command: |
+            cd android && ./gradlew pixel2api27DebugAndroidTest
+          background: true
+      - run: 
+          command: |
+            cd android && ./gradlew pixel2api28DebugAndroidTest
+          background: true
+      - run: 
+          command: |
+            cd android && ./gradlew pixel2api29DebugAndroidTest
+          background: true
+      - run: 
+          command: |
+            cd android && ./gradlew pixel2api30DebugAndroidTest
+          background: true
+      - run: 
+          command: |
+            cd android && ./gradlew pixel2api31DebugAndroidTest
+          background: true
+      - run: 
+          command: |
+            cd android && ./gradlew pixel2api32DebugAndroidTest
+          background: true
+      - run: 
+          command: |
+            cd android && ./gradlew pixel2api33DebugAndroidTest
+          background: false
       - run: cd android && ./gradlew allAPIGroupDebugAndroidTest
   flutter-test:
     machine:
