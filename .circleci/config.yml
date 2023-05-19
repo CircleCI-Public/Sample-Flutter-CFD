@@ -24,6 +24,7 @@ jobs:
       - run: echo "export ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL=600" >> ~/.bashrc
       - run: sdkmanager "system-images;android-32;google_apis;x86_64"
       - run: sdkmanager "system-images;android-31;google_apis;x86_64"
+      - run: sdkmanager "system-images;android-30;google_apis;x86_64"
       - run: cd android && ./gradlew highAPIGroupDebugAndroidTest --info
       - run: sdkmanager "build-tools;30.0.3"
       # - run: 
