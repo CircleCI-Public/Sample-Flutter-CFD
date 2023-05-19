@@ -22,15 +22,16 @@ jobs:
           name: Create Google Play key
           command: cd android/app && echo $GOOGLE_PLAY_KEY > ./google-play-key.json
       - run: echo "export ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL=600" >> ~/.bashrc
-      - run: sdkmanager "build-tools;30.0.3"
-      - run: 
-          command: |
-            cd android && ./gradlew pixel2api30DebugAndroidTest
-      - run: cd android && ./gradlew cleanManagedDevices --unused-only
-      - run: cd android && ./gradlew lowAPIGroupDebugAndroidTest --info
       - run: sdkmanager "system-images;android-32;google_apis;x86_64"
       - run: sdkmanager "system-images;android-31;google_apis;x86_64"
       - run: cd android && ./gradlew highAPIGroupDebugAndroidTest --info
+      - run: sdkmanager "build-tools;30.0.3"
+      # - run: 
+      #     command: |
+      #       cd android && ./gradlew pixel2api30DebugAndroidTest
+      - run: cd android && ./gradlew cleanManagedDevices --unused-only
+      - run: cd android && ./gradlew lowAPIGroupDebugAndroidTest --info
+
   flutter-test:
     machine:
       image: android:2023.04.1
