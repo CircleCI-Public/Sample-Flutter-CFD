@@ -25,12 +25,12 @@ jobs:
       - run: 
           command: |
             cd android && ./gradlew pixel2api30DebugAndroidTest
-      # - run: sdkmanager "system-images;android-32;google_apis;x86_64"
+      - run: sdkmanager "system-images;android-32;google_apis;x86_64"
       # - run: sdkmanager "system-images;android-31;google_apis;x86_64"
       # - run: sdkmanager "system-images;android-30;google_apis;x86_64"
+      - run: cd android && ./gradlew cleanManagedDevices --unused-only
       - run: cd android && ./gradlew highAPIGroupDebugAndroidTest --info
       - run: sdkmanager "build-tools;30.0.3"
-      - run: cd android && ./gradlew cleanManagedDevices --unused-only
       - run: cd android && ./gradlew lowAPIGroupDebugAndroidTest --info
 
   flutter-test:
