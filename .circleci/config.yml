@@ -26,7 +26,7 @@ jobs:
       #     command: |
       #       cd android && ./gradlew pixel2api30DebugAndroidTest
       - run: sdkmanager "build-tools;30.0.3"
-            - run: 
+      - run: 
           command: |
             cd android && ./gradlew pixel2api30DebugAndroidTest
       # - run: 
