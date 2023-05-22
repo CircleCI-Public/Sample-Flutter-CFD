@@ -29,7 +29,7 @@ jobs:
       - run: cd android && ./gradlew cleanManagedDevices
       - run: sdkmanager "system-images;android-29;google_apis;x86_64"
       - run: sdkmanager "system-images;android-28;google_apis;x86_64"
-      - run: sdkmanager "system-images;android-27;google_apis;x86_64"
+      - run: sdkmanager "system-images;android-27;google_apis;x86"
       - run: cd android && ./gradlew lowAPIGroupDebugAndroidTest --info
       - run: sdkmanager "system-images;android-32;google_apis;x86_64"
       - run: sdkmanager "system-images;android-31;google_apis;x86_64"
