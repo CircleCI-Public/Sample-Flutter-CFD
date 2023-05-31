@@ -8,6 +8,7 @@ jobs:
     docker:
       - image: cimg/android:2023.05.1-node
     steps:
+      - checkout
       - run:
           command: cd android && bundle install
   gradle-managed-test:
