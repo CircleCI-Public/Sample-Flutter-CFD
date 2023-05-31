@@ -9,8 +9,8 @@ jobs:
       - image: cimg/android:2023.05.1-node
     steps:
       - checkout
-      - run: STR="string"
-      - run: echo $STR
+      - run: echo 'export STR="string"' >> "$BASH_ENV"
+      - run: echo ${STR}
   gradle-managed-test:
     machine:
       image: android:2023.05.1
