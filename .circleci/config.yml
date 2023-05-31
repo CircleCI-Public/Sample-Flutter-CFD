@@ -4,6 +4,13 @@ orbs:
   android: circleci/android@2.2.0
 
 jobs:
+  cimg-android-test:
+    docker:
+      - image: cimg/android:2023.05.1-node
+    steps:
+      - run:
+          command: bundle install
+          working_directory: android
   gradle-managed-test:
     machine:
       image: android:2023.05.1
@@ -123,6 +130,7 @@ jobs:
 workflows:
   test-and-build-flutter:
     jobs:
+      - cimg-android-test
       - flutter-test
       - gradle-managed-test
       - flutter-build:
