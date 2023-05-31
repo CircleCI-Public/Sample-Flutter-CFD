@@ -9,8 +9,7 @@ jobs:
       - image: cimg/android:2023.05.1-node
     steps:
       - run:
-          command: bundle install
-          working_directory: android
+          command: cd android && bundle install
   gradle-managed-test:
     machine:
       image: android:2023.05.1
